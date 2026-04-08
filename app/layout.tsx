@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <AppSidebar />
             <main className="w-full">
               <SidebarTrigger className="fixed z-30" />
-              <Header/>
+              
               {children}
             </main>
           </SidebarProvider>
