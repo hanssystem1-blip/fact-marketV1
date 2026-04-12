@@ -4,11 +4,22 @@ import Dashboard from "./component/Dashboard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { LogOut } from "lucide-react";
+import { LogOut, ShoppingBag } from "lucide-react";
 export default function Home() {
   return (
     <>
-      
+      <nav className="md:py-10 md:px-10 py-4 fixed z-10 gap-5 pt-10 mb-10 bg-gray-100  w-full shadow">
+            <h1 className="lg:text-3xl md:text-2xl md:mb-4 uppercase text-sm ">tableau de bord</h1>
+            <div className="flex  justify-between w-200">
+              <Input type="search" className="w-2/3 "  placeholder="recherher.." required ></Input>
+              <ShoppingBag >
+                <Badge variant="default" className="absolute -top-1 -right-1">
+                  <span>5</span>
+                </Badge>
+              </ShoppingBag>
+            </div>
+
+        </nav>
       <div className="md:grid-cols-2 md:grid-rows-2 grid   md:gap-10 md:w-210 md:mt-50 mt-30 gap-3 md:grid relative md:ml-10 ">
         <Dashboard
         classname="border-r-3 border-amber-500"

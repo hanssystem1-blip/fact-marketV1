@@ -3,7 +3,6 @@ import {Inter } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "../components/app-sidebar"
-import Header from "./component/Header";
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -16,14 +15,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" suppressHydrationWarning >
+    <html lang="fr">
       <head />
       <body className={` ${inter.variable}`}>
           <SidebarProvider >
             <AppSidebar />
             <main className="w-full">
               <SidebarTrigger className="fixed z-30" />
-              
               {children}
             </main>
           </SidebarProvider>

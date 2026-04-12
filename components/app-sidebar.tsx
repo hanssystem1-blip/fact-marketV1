@@ -5,7 +5,7 @@ import {
   SidebarGroup,
   SidebarHeader,
 } from "@/components/ui/sidebar"
-import { FileText, LayoutDashboard,LogOut, MoonIcon, Store } from "lucide-react"
+import { FileText, LayoutDashboard,LogOut, MoonIcon, ShoppingBasket, StoneIcon, Store } from "lucide-react"
 import Link from "next/link"
 import {
   SidebarGroupContent,
@@ -29,31 +29,37 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu >
 
-              <SidebarMenuItem  >
-                <SidebarMenuButton  >
-                  <Link href="/dashboard" className="flex gap-4  items-center " >
+              <SidebarMenuItem>
+                <Link href="/" className="flex gap-4  items-center  " >
+                <SidebarMenuButton className="cursor-pointer  " >
+                  
                     <LayoutDashboard className="h-10" />
                     <span className="text-2xl font-inter ">Dashboard</span>
-                  </Link>
+                  
                 </SidebarMenuButton>
+                </Link>
               </SidebarMenuItem>
 
               <SidebarMenuItem >
-                <SidebarMenuButton >
-                  <Link href="/services" className="flex gap-4  items-center "  >
-                    <Store className="w-60  h-60" />
-                    <span className="text-2xl ">Services</span>
-                  </Link>
+                <Link href="/produits" className="flex gap-4  items-center  "  >
+                <SidebarMenuButton className="cursor-pointer  "  >
+                  
+                    <ShoppingBasket className="w-60  h-60" />
+                    <span className="text-2xl ">Produits</span>
+                  
                 </SidebarMenuButton>
+                </Link>
               </SidebarMenuItem>
 
               <SidebarMenuItem>
-                <SidebarMenuButton >
-                  <Link href="/factures" className="flex gap-4  items-center " >
+                <Link href="/factures" className="flex gap-4  items-center  " >
+                <SidebarMenuButton className="cursor-pointer  "  >
+                  
                     <FileText className="w-60  h-60" />
                     <span className="text-2xl ">Factures</span>
-                  </Link>
+                  
                 </SidebarMenuButton>
+                </Link>
               </SidebarMenuItem>
 
             </SidebarMenu>
@@ -61,20 +67,30 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter  />
-      <SidebarMenuButton >
-        <Link href="/factures" className="flex gap-4  items-center " >
-          <LogOut/>
-          <span className="text-2xl ">log-out</span>
-        </Link>
-      </SidebarMenuButton>
-      <SidebarMenuButton >
-        <Link href="/factures" className="flex gap-4  items-center " >
-          <MoonIcon/>
-          <span className="text-2xl ">dark</span>
-        </Link>
-      </SidebarMenuButton>
-      <SidebarFooter />
+      <SidebarFooter>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <Link href="/" className="flex gap-4  items-center  " >
+            <SidebarMenuButton className="cursor-pointer  " >
+              
+                <LogOut/>
+                <span className="text-2xl ">log-out</span>
+              
+            </SidebarMenuButton>
+            </Link>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <Link href="/" className="flex gap-4  items-center  " >
+            <SidebarMenuButton className="cursor-pointer  " >
+              
+                <MoonIcon/>
+                <span className="text-2xl ">dark</span>
+              
+            </SidebarMenuButton>
+            </Link>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
     </Sidebar>
   )
 }
