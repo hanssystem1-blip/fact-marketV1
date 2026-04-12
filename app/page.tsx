@@ -13,9 +13,9 @@ export default function Home() {
             <div className="flex  justify-between w-200">
               <Input type="search" className="w-2/3 "  placeholder="recherher.." required ></Input>
               <ShoppingBag className="w-6 h-6 text-orange-600  relative">
-                <Badge  className="position-absolute -top-2 -right-2 rounded-full bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center">
+                {/* <Badge  className="position-absolute -top-2 -right-2 rounded-full bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center">
                   <ShoppingBag className="w-4 h-4 text-white" />
-                </Badge>
+                </Badge> */}
               </ShoppingBag>
             </div>
 
