@@ -1,14 +1,27 @@
 "use client";
+
+import html2pdf from "html2pdf.js";
+
+
 import { Badge } from "@/components/ui/badge"
 import Dashboard from "./component/Dashboard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
-import { LogOut, ShoppingBag } from "lucide-react";
+import {  LogOut, ShoppingBag } from "lucide-react";
 export default function Home() {
+
+  const downloadPDF = () => {
+    const element = document.getElementById("content");
+
+    if (element) {
+      html2pdf().from(element).save();
+    }
+  };
   return (
     <>
-      <nav className="md:py-10 md:px-10 py-4 fixed z-10 gap-5 pt-10 mb-10 bg-gray-100  w-full shadow">
+      <nav className="md:py-10 md:px-10 py-4 fixed z-10 gap-5 pt-10 mb-10   w-full shadow">
             <h1 className="lg:text-3xl md:text-2xl md:mb-4 uppercase text-sm ">tableau de bord</h1>
             <div className="flex  justify-between w-200">
               <Input type="search" className="w-2/3 "  placeholder="recherher.." required ></Input>
@@ -18,7 +31,7 @@ export default function Home() {
                 </Badge> */}
               </ShoppingBag>
             </div>
-
+                  
         </nav>
       <div className="md:grid-cols-2 md:grid-rows-2 grid   md:gap-10 md:w-210 md:mt-50 mt-30 gap-3 md:grid relative md:ml-10 ">
         <Dashboard
@@ -36,7 +49,7 @@ export default function Home() {
         <Dashboard
         classname="border-r-3 border-ring"
           title="Produit"
-          elmt={5}
+          elmt={9}
            
         />
         <Dashboard
@@ -45,8 +58,14 @@ export default function Home() {
           elmt="a jour"
           
         />
+        
       </div>
-     
+      
+        <Separator className="my-10" />
+        <Link href="/api/pdf" className="text-blue-500 hover:underline">
+          Télécharger le PDF
+        </Link>
+        
     </>
   );
 }

@@ -11,6 +11,7 @@ import Menage from '@/public/menage.png'
 import Nido from '@/public/nido.png'
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge"
+import { ShoppingBag } from 'lucide-react';
 import {
   Card,
   CardAction,
@@ -19,21 +20,30 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+
+
+import { useState } from 'react';
 export default function Page() {
+
+  const [count, setCount] = useState(0)
+  const ajouter = () => {
+    setCount(count + 1);
+  }
   const downloadPDF = () => {
     window.open("/api/pdfdo");
   };
 
   return (
     <>
-      <header className="md:mt-5 md:mb-6">
-        <h1 className="md:text-3xl capitalize text-center">produits disponibles</h1>
-        <span className='w-5 h-2 bg-orange-600'></span>
+      <header className="md:mt-5 md:mb-6 flex justify-around items-center fixed z-100 w-2/3 lg:mt-10  bg-transparent ">
+        <h1 className="md:text-3xl capitalize text-center">produits disponibles  </h1>
+        <span className='rounded bg-orange-500 text-center text-xl w-10 h-10   relative'>
+          <Badge className="position-absolute top-2 left-2 rounded-full bg-red-500 text-white text-sm w-5 h-5 flex items-center justify-center">
+{count}
+          </Badge>
+        </span>
       </header>
-
-
-
-      <section className="produits">
+      <section className="produits mb-10 lg:mt-20">
         <div className="md:grid wrap md:grid-cols-3 md:grid-rows-4 md:gap-4 md:ml-4">
           <Card className="relative mx-auto w-full max-w-sm pt-0">
             <div className="absolute inset-0 z-30 aspect-video " />
@@ -47,9 +57,11 @@ export default function Page() {
                 <Badge variant="default" className='bg-orange-400' >disponible</Badge>
               </CardAction>
               <CardTitle>Huile Raffine</CardTitle>
+              <CardDescription>pricing : 2000 XAF</CardDescription>
             </CardHeader>
+            
             <CardFooter>
-              <Button className="w-full hover:transform hover:-translate-y-0.5 ">Ajouter </Button>
+              <Button className="w-full hover:transform hover:-translate-y-0.5 " onClick={ajouter} >Ajouter </Button>
             </CardFooter>
           </Card>
           <Card className="relative mx-auto w-full max-w-sm pt-0">
@@ -66,7 +78,7 @@ export default function Page() {
               <CardTitle>Huile Raffine</CardTitle>
             </CardHeader>
             <CardFooter>
-              <Button className="w-full hover:transform hover:-translate-y-0.5 ">Ajouter </Button>
+              <Button className="w-full hover:transform hover:-translate-y-0.5 " onClick={ajouter}>Ajouter </Button>
             </CardFooter>
           </Card>
           <Card className="relative mx-auto w-full max-w-sm pt-0">
@@ -83,7 +95,7 @@ export default function Page() {
               <CardTitle>Huile Raffine</CardTitle>
             </CardHeader>
             <CardFooter>
-              <Button className="w-full hover:transform hover:-translate-y-0.5 ">Ajouter </Button>
+              <Button className="w-full hover:transform hover:-translate-y-0.5 " onClick={ajouter}>Ajouter </Button>
             </CardFooter>
           </Card>
           <Card className="relative mx-auto w-full max-w-sm pt-0">
@@ -100,7 +112,7 @@ export default function Page() {
               <CardTitle>Huile Raffine</CardTitle>
             </CardHeader>
             <CardFooter>
-              <Button className="w-full hover:transform hover:-translate-y-0.5 ">Ajouter </Button>
+              <Button className="w-full hover:transform hover:-translate-y-0.5 " onClick={ajouter}>Ajouter </Button>
             </CardFooter>
           </Card>
           <Card className="relative mx-auto w-full max-w-sm pt-0">
@@ -117,7 +129,7 @@ export default function Page() {
               <CardTitle>Huile Raffine</CardTitle>
             </CardHeader>
             <CardFooter>
-              <Button className="w-full hover:transform hover:-translate-y-0.5 ">Ajouter </Button>
+              <Button className="w-full hover:transform hover:-translate-y-0.5 " onClick={ajouter}>Ajouter </Button>
             </CardFooter>
           </Card>
           <Card className="relative mx-auto w-full max-w-sm pt-0">
@@ -134,7 +146,7 @@ export default function Page() {
               <CardTitle>Huile Raffine</CardTitle>
             </CardHeader>
             <CardFooter>
-              <Button className="w-full hover:transform hover:-translate-y-0.5 ">Ajouter </Button>
+              <Button className="w-full hover:transform hover:-translate-y-0.5 " onClick={ajouter}>Ajouter </Button>
             </CardFooter>
           </Card>
           <Card className="relative mx-auto w-full max-w-sm pt-0">
@@ -151,7 +163,7 @@ export default function Page() {
               <CardTitle>lessive & menage</CardTitle>
             </CardHeader>
             <CardFooter>
-              <Button className="w-full hover:transform hover:-translate-y-0.5 ">Ajouter </Button>
+              <Button className="w-full hover:transform hover:-translate-y-0.5 " onClick={ajouter}>Ajouter </Button>
             </CardFooter>
           </Card>
           <Card className="relative mx-auto w-full max-w-sm pt-0">
@@ -168,7 +180,7 @@ export default function Page() {
               <CardTitle>tomate concentrer</CardTitle>
             </CardHeader>
             <CardFooter>
-              <Button className="w-full hover:transform hover:-translate-y-0.5 ">Ajouter </Button>
+              <Button className="w-full hover:transform hover:-translate-y-0.5 " onClick={ajouter}>Ajouter </Button>
             </CardFooter>
           </Card>
           <Card className="relative mx-auto w-full max-w-sm pt-0">
@@ -185,7 +197,7 @@ export default function Page() {
               <CardTitle>plaquete chocolat</CardTitle>
             </CardHeader>
             <CardFooter>
-              <Button className="w-full hover:transform hover:-translate-y-0.5 ">Ajouter </Button>
+              <Button className="w-full hover:transform hover:-translate-y-0.5 " onClick={ajouter}>Ajouter </Button>
             </CardFooter>
           </Card>
           <Card className="relative mx-auto w-full max-w-sm pt-0">
@@ -202,7 +214,7 @@ export default function Page() {
               <CardTitle>Lait en Poudre</CardTitle>
             </CardHeader>
             <CardFooter>
-              <Button className="w-full hover:transform hover:-translate-y-0.5 ">Ajouter </Button>
+              <Button className="w-full hover:transform hover:-translate-y-0.5 " onClick={ajouter}>Ajouter </Button>
             </CardFooter>
           </Card>
         </div>
