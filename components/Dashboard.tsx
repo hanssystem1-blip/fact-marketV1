@@ -11,7 +11,7 @@ interface DashboardProps {
 
 export default function Dashboard({ title, elmt, classname  }: DashboardProps) {
   return (
-    <div className={`rounded-lg    shadow-sm border-r-3  p-5 md:p-10   ${classname }`}>
+    <div className={`rounded-lg  dark:shadow-white dark:shadow-xs shadow-sm border-r-3  p-5 md:p-10   ${classname }`}>
         
         <div className="flex justify-between text-sm  text-md md:text-lg lg:text-xl ">
             <h1 className="">{title}</h1>

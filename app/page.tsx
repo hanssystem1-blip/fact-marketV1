@@ -1,10 +1,9 @@
 "use client";
 
-import html2pdf from "html2pdf.js";
 
 
 import { Badge } from "@/components/ui/badge"
-import Dashboard from "./component/Dashboard";
+import Dashboard from "@/components/Dashboard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
@@ -12,13 +11,6 @@ import { Separator } from "@/components/ui/separator";
 import {  LogOut, ShoppingBag } from "lucide-react";
 export default function Home() {
 
-  const downloadPDF = () => {
-    const element = document.getElementById("content");
-
-    if (element) {
-      html2pdf().from(element).save();
-    }
-  };
   return (
     <>
       <nav className="md:py-10 md:px-10 py-4 fixed z-10 gap-5 pt-10 mb-10   w-full shadow">
