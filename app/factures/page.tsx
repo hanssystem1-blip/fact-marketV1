@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 
-export default function Page() {
+export default function Factures() {
   return (
     <>
       <header>
@@ -10,7 +10,7 @@ export default function Page() {
           Télécharger PDF
         </Button>
       </header>
-      <div id="content">
+      <div >
         <h1>Mon contenu</h1>
         <p>hey</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione repellat dolorum, explicabo rerum, facere magnam veniam dicta quasi ea fugit cupiditate ab. Sed suscipit voluptatem nihil aspernatur assumenda, sunt rerum.</p>
