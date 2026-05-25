@@ -1,14 +1,11 @@
 "use client";
-import { Button } from "@/components/ui/button";
 
 export default function Factures() {
   return (
     <>
       <header>
         <h1 className="text-3xl font-bold">vos Factures</h1>
-        <Button >
-          Télécharger PDF
-        </Button>
+        
       </header>
       <div >
         <h1>Mon contenu</h1>

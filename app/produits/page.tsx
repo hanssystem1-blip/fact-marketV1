@@ -23,15 +23,12 @@ import {
 
 
 import { useState } from 'react';
-export default function Page() {
+export default function Produits() {
 
   const [count, setCount] = useState(0)
   const ajouter = () => {
     setCount(count + 1);
   }
-  const downloadPDF = () => {
-    window.open("/api/pdfdo");
-  };
 
   return (
     <>
