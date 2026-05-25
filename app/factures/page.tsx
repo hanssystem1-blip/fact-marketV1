@@ -1,15 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
-// import html2pdf from "html2pdf.js";
 
 export default function Page() {
-
-  //  const downloadPDF = () => {
-  //   const element = document.getElementById("content");
-  //   if (element) {
-  //     html2pdf().from(element).save();
-  //   }
-  // };
   return (
     <>
       <header>

@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
-import {  LogOut, ShoppingBag } from "lucide-react";
+import {   ShoppingBag } from "lucide-react";
 export default function Home() {
 
   return (
@@ -54,9 +54,7 @@ export default function Home() {
       </div>
       
         <Separator className="my-10" />
-        <Link href="/api/pdf" className="text-blue-500 hover:underline">
-          Télécharger le PDF
-        </Link>
+        
         
     </>
   );
