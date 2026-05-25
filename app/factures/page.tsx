@@ -1,29 +1,20 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import html2pdf from "html2pdf.js";
+// import html2pdf from "html2pdf.js";
 
 export default function Page() {
 
-   const downloadPDF = () => {
-    const element = document.getElementById("content");
-
-//     let opt = {
-//   margin:       1,
-//   filename:     'hans.pdf',
-//   image:        { type: 'jpeg' as 'jpeg', quality: 0.98 },
-//   html2canvas:  { scale: 2 },
-//   jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' as 'portrait' }
-// };
-
-    if (element) {
-      html2pdf().from(element).save();
-    }
-  };
+  //  const downloadPDF = () => {
+  //   const element = document.getElementById("content");
+  //   if (element) {
+  //     html2pdf().from(element).save();
+  //   }
+  // };
   return (
     <>
       <header>
         <h1 className="text-3xl font-bold">vos Factures</h1>
-        <Button onClick={downloadPDF}>
+        <Button >
           Télécharger PDF
         </Button>
       </header>
