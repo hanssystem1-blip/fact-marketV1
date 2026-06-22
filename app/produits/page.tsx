@@ -23,6 +23,7 @@ import {
 
 
 import { useState } from 'react';
+import { Input } from '@/components/ui/input';
 export default function Produits() {
 
   const [count, setCount] = useState(0)
@@ -34,12 +35,17 @@ export default function Produits() {
     <>
       <header className="md:mt-5 md:mb-6 flex justify-evenly bg-accent  items-center fixed z-100 w-full p-6 lg:mt-10  ">
         <h1 className="md:text-3xl capitalize text-center">produits disponibles  </h1>
-        <span className='rounded bg-orange-500 text-center text-xl w-10 h-10   relative'>
-          <Badge className="position-absolute top-2 left-2 rounded-full bg-red-500 text-white text-sm w-5 h-5 flex items-center justify-center">
+        <span className=''>
+          
+          <Button className="fixed z-50 relative  rounded-full bg-orange-500 hover:bg-orange-600 p-4 text-white" >
+        <ShoppingBag size={24} />
+        <Badge className="position-absolute top-2 left-2 rounded-full bg-red-500 text-white text-sm w-5 h-5 flex items-center justify-center">
             {count}
           </Badge>
+      </Button>
         </span>
       </header>
+      
       <section className="produits mb-10 lg:mt-40">
         <div className="md:grid wrap md:grid-cols-3 md:grid-rows-4 md:gap-4 md:ml-4">
           <Card className="relative mx-auto w-full max-w-sm pt-0">

@@ -11,7 +11,7 @@ import {
   SidebarMenuButton,
 } from "@/components/ui/sidebar"
 import * as React from "react"
-import { Moon, Sun } from "lucide-react"
+import { Handshake, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import {
@@ -57,6 +57,16 @@ export function AppSidebar() {
 
                     <ShoppingBasket className="w-60  h-60" />
                     <span className="text-2xl ">Produits</span>
+
+                  </SidebarMenuButton>
+                </Link>
+              </SidebarMenuItem>
+              <SidebarMenuItem >
+                <Link href="/clients" className="flex gap-4  items-center  "  >
+                  <SidebarMenuButton className="cursor-pointer  "  >
+
+                    <Handshake className="w-60  h-60" />
+                    <span className="text-2xl ">Clients</span>
 
                   </SidebarMenuButton>
                 </Link>

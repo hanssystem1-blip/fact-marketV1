@@ -11,6 +11,8 @@
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
     "@prisma/client": "^7.8.0",
+    "@supabase/ssr": "^0.10.3",
+    "@supabase/supabase-js": "^2.107.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "html2pdf.js": "^0.14.0",

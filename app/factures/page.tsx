@@ -29,6 +29,7 @@ export default function Factures() {
           >
             + nouvelle facture
           </Button>
+          
         ) : (
           <Button
             className="bg-orange-500 hover:bg-orange-600 font-bold text-xl p-4 text-white"
@@ -45,13 +46,13 @@ export default function Factures() {
             <div className="">
               <p>facture 1</p>
 
-              <table className=" ">
-                <tr className="border-b " >
+              <table >
+                <tr  >
                   <th>produit</th>
                   <th>quantité</th>
                   <th>prix</th>
                 </tr>
-                <tr className=" ">
+                <tr >
                   <td>
                     <NativeSelect name="" defaultValue="" id="">
                       <NativeSelectOption value="">
