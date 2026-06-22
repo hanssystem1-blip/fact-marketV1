@@ -5,24 +5,50 @@ export async function GET() {
   const { data, error } = await supabase
   .from("clients")
   .select("*");
-  return NextResponse.json(data);
   if (error) {
-    return NextResponse.json({ message: "error" }, { status: 500 });
+    return NextResponse.json({ message: error.message }, { status: 500 });
   }
+  return NextResponse.json(data);
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const data = await supabase
-      .from("clients")
-      .insert({ nom: body.nom, email: body.email, telephone: body.telephone })
-      .select();
-    console.log(data);
-    return NextResponse.json({ message: "Utilisateur créé" }, { status: 201 });
-  } catch (error) {
-    return NextResponse.json({ message: "error" }, { status: 500 });
+    const { nom, telephone, email } = body;
 
-    console.error("erreur formulaire", error);
+    // Validation des champs requis
+    if (!nom || !telephone || !email) {
+      return NextResponse.json( { error: "Tous les champs sont requis" }, { status: 400 }
+      );
+    }
+    const { data, error } = await supabase
+      .from("clients")
+      .insert([
+        {
+          nom,
+          telephone,
+          email,
+        },
+      ])
+      .select();
+
+    if (error) {
+      console.error("Erreur Supabase:", error);
+      return NextResponse.json(
+        { error: error.message },
+        { status: 400 }
+      );
+    }
+
+    return NextResponse.json(
+      { message: "Client créé avec succès", data },
+      { status: 201 }
+    );
+  } catch (error) {
+    console.error("Erreur formulaire", error);
+    return NextResponse.json(
+      { error: "Erreur serveur" },
+      { status: 500 }
+    );
   }
 }
