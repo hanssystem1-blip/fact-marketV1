@@ -100,8 +100,8 @@ export default function Client() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {listclients.map((client, index) => (
-                  <tr key={client.id ?? index}>
+                {listclients.map((client) => (
+                  <tr key={client.id}>
                     <td className="px-4 py-3 text-sm text-gray-800">{client.nom}</td>
                     <td className="px-4 py-3 text-sm text-gray-800">{client.email}</td>
                     <td className="px-4 py-3 text-sm text-gray-800">{client.telephone}</td>
